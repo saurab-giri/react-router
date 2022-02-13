@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Covid, Todo} from './components/organism';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route, Link } from "react-router-dom";
+import Menu from './Menu';
 
-function App() {
+const  App= () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      <div className="App">
+      <h1>Welcome to React Router!</h1>
+      <Menu/>
+      <Routes>
+         <Route path="/covid" element={<Covid/>} />
+          <Route path="/todo" element={<Todo/>} />
+      </Routes>
     </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
